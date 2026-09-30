@@ -1,17 +1,18 @@
-# mma
+# Money Management Application (MMA)
 
-A new Flutter project.
+MMA is a Flutter application for managing personal finances. It helps users keep track of money coming in and going out by organizing transactions into income and expense categories.
+
+## Main Features
+
+- View income and expense transactions.
+- Browse categories for income and expenses.
+- Keep money operations organized in one place.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Make sure Flutter is installed, then fetch dependencies and run the application:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
