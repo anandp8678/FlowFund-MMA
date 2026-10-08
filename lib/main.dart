@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mma/screens/home/Screen_home.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
+    Hive.registerAdapter(CategoryTypeAdapter());
+  }
+  if (!Hive.isAdapterRegistered(CategoryModelsAdapter().typeId)) {
+    Hive.registerAdapter(CategoryModelsAdapter());
+  }
   runApp(const MyApp());
 }
 
