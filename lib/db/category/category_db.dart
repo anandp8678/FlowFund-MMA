@@ -5,7 +5,7 @@ abstract class CategoryDbFunctions {
    Future<void> insertCategory(CategoryModels value);
 }
 
-class CategoryDB implements CategoryDbFunctions{
+abstract class CategoryDB implements CategoryDbFunctions{
   @override
   Future<void> insertCategory(CategoryModels value) async {
     

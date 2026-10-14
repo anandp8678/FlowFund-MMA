@@ -48,3 +48,40 @@ class CategoryModelsAdapter extends TypeAdapter<CategoryModels> {
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
+
+class CategoryTypeAdapter extends TypeAdapter<CategoryType> {
+  @override
+  final typeId = 2;
+
+  @override
+  CategoryType read(BinaryReader reader) {
+    switch (reader.readByte()) {
+      case 0:
+        return CategoryType.income;
+      case 1:
+        return CategoryType.expense;
+      default:
+        return CategoryType.income;
+    }
+  }
+
+  @override
+  void write(BinaryWriter writer, CategoryType obj) {
+    switch (obj) {
+      case CategoryType.income:
+        writer.writeByte(0);
+      case CategoryType.expense:
+        writer.writeByte(1);
+    }
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CategoryTypeAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}

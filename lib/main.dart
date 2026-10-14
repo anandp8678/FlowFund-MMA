@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mma/screens/home/Screen_home.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+import 'package:mma/models/category/category_models.dart';
+import 'package:mma/screens/home/screen_home.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

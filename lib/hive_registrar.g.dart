@@ -8,11 +8,13 @@ import 'package:mma/models/category/category_models.dart';
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
     registerAdapter(CategoryModelsAdapter());
+    registerAdapter(CategoryTypeAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
     registerAdapter(CategoryModelsAdapter());
+    registerAdapter(CategoryTypeAdapter());
   }
 }
