@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mma/db/category/category_db.dart';
 import 'package:mma/screens/catagories/expence_catagory_list.dart';
 import 'package:mma/screens/catagories/income_catagory_list.dart';
 
@@ -16,6 +17,11 @@ class _ScreenCatagoryState extends State<ScreenCatagory> with SingleTickerProvid
   void initState() {
     super.initState();
     _tabcontroller = TabController(length: 2, vsync: this);
+    CategoryDB().getCategories().then((value) {
+      print('Categories: $value');
+    }).catchError((error) {
+      print('Error fetching categories: $error');
+    });
   }
   @override
   Widget build(BuildContext context) {

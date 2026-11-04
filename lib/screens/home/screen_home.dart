@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mma/db/category/category_db.dart';
+import 'package:mma/models/category/category_models.dart';
 import 'package:mma/screens/home/widgets/bottom_navigation.dart';
 import 'package:mma/screens/transactions/screen_transaction.dart';
 import 'package:mma/screens/catagories/screen_catagory.dart';
@@ -36,6 +38,12 @@ class ScreenHome extends StatelessWidget {
             print('Add transaction');
           } else {
             print('Add category');
+            final _sample = CategoryModels(
+              id: DateTime.now().millisecondsSinceEpoch.toString(),
+              name: 'Sample Category',
+              type: CategoryType.income,
+            );
+            CategoryDB().insertCategory(_sample);
           }
         },
         child: const Icon(Icons.add),

@@ -9,6 +9,9 @@ abstract class CategoryDbFunctions {
 }
 
 class CategoryDB implements CategoryDbFunctions {
+
+
+  
   @override
   Future<void> insertCategory(CategoryModels value) async {
     final categoryDB = await Hive.openBox<CategoryModels>(CATEGORY_DB_NAME);
