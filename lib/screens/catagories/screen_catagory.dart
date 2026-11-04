@@ -18,10 +18,11 @@ class _ScreenCatagoryState extends State<ScreenCatagory> with SingleTickerProvid
     super.initState();
     _tabcontroller = TabController(length: 2, vsync: this);
     CategoryDB().getCategories().then((value) {
-      print('Categories: $value');
+      print('Categories: $value.toString()');
     }).catchError((error) {
       print('Error fetching categories: $error');
     });
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {

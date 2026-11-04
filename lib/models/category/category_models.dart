@@ -29,4 +29,9 @@ class CategoryModels extends HiveObject {
     required this.type,
     this.isDeleted = false,
   });
+
+  @override
+  String toString() {
+    return 'CategoryModels{id: $id, name: $name, isDeleted: $isDeleted, type: $type}';
+  }
 }
